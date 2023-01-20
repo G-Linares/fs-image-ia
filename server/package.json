@@ -1,0 +1,29 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "nodemon src/index.js",
+        "lint": "npx prettier --write .",
+        "format": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "Gerardo Linares",
+    "license": "MIT",
+    "description": "Server side create an image using IA",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "nodemon": "^2.0.20"
+    },
+    "devDependencies": {
+        "dotenv": "^16.0.3",
+        "eslint": "^8.32.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-n": "^15.6.1",
+        "eslint-plugin-promise": "^6.1.1",
+        "prettier": "^2.8.3"
+    }
+}
