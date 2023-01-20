@@ -1,6 +1,7 @@
 {
     "name": "server",
     "version": "1.0.0",
+    "type": "module",
     "main": "src/index.js",
     "scripts": {
         "dev": "nodemon src/index.js",
@@ -12,9 +13,12 @@
     "license": "MIT",
     "description": "Server side create an image using IA",
     "dependencies": {
+        "cloudinary": "^1.33.0",
         "cors": "^2.8.5",
         "express": "^4.18.2",
-        "nodemon": "^2.0.20"
+        "mongoose": "^6.8.4",
+        "nodemon": "^2.0.20",
+        "openai": "^3.1.0"
     },
     "devDependencies": {
         "dotenv": "^16.0.3",
