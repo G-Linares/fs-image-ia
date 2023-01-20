@@ -15,7 +15,29 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false);
 
   // once you send the form this is called
-  const handleSubmit = () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (form.prompt && form.photo) {
+      setLoading(true);
+      try {
+        const response = await fetch("http://localhost:8080/api/v1/post", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(form)
+        });
+        await response.json();
+        navigate("/");
+      } catch (error) {
+        alert(err);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      alert("Please enter a prompt and generate an image");
+    }
+  };
 
   // When the form changes value, this is called to set the new form
   const handleChange = (e) =>
@@ -112,7 +134,7 @@ const CreatePost = () => {
         </div>
         <div className="mt-10">
           <p className="mt-2 text-[#666e75] text-[14px]">
-            Once you hace created the image you want, you can share it with
+            Once you have created the image you want, you can share it with
             others in the community
           </p>
           <button
